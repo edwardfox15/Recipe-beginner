@@ -4,6 +4,7 @@ import RecipeHeader from "../components/RecipeHeader";
 import useFetchRecipe from "../hooks/useFetchRecipe";
 import Loading from "../components/Loading";
 import NutritionInfo from "../components/RecipeNutritionInfo";
+import Error from "../components/Error";
 
 export default function RecipePage() {
   const { id } = useParams();
@@ -15,8 +16,8 @@ export default function RecipePage() {
 
   if (loading) return <Loading />;
   if (error) return <h1>{error}</h1>;
+  if(data?.errors) return <Error message={data.errors} explanation="Nothing is found"/>
 
-  console.log(data);
   return (
     <div>
       {data && (

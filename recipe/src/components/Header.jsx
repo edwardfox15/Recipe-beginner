@@ -3,11 +3,13 @@ import { useSearchParams } from "react-router-dom";
 
 function Header({ handleSearch }) {
   const [searchTerm, setSearchTerm] = useState("");
-  // const [_, setSearchParams] = useSearchParams();
+  const [_ , setSearchParams] = useSearchParams();
   const handleClick = () => {
     handleSearch(searchTerm);
     if (searchTerm) {
-      setSearchTerm(searchTerm)
+      setSearchParams({
+        search: searchTerm
+      })
     }
     setSearchTerm("");
   };
@@ -25,7 +27,7 @@ function Header({ handleSearch }) {
         </p>
         <div className="header-input-container">
           <input
-            type="text"
+            type="text" 
             placeholder="Find a recipe..."
             onChange={(e) => setSearchTerm(e.target.value)}
             value={searchTerm}

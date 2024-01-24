@@ -24,7 +24,7 @@ export default function NavBar() {
 
   return (
     <nav className={changeNavColor ? '' : 'navbar_color_change'}>
-      <Link to="/">Home</Link>
+      <Link to="/">Home</Link>  
       <Link to="/about">About</Link>
     </nav>
   );

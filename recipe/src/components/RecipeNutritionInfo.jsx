@@ -3,7 +3,7 @@
 export default function NutritionInfo({instruction ,image }) {
 
     return(
-        <div className="w-100 h-100 recipe-info d-flex flex-row justify-content-between">
+        <div className="w-100 h-100 recipe-info d-flex flex-row">
             <div className="w-100 recipe-info-container d-flex flex-column">
                 <div className="w-100 h-100 recipe-info-header">
                     <h3>INSTRUCTIONS</h3>
